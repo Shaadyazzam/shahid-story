@@ -76,7 +76,7 @@ const Index = () => {
                 {language === 'en' ? 'Submit Your Testimony' : 'قدّم شهادتك'}
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="secondary" className="text-white border border-white hover:bg-white/20" asChild>
               <Link to="/testimonials">
                 {language === 'en' ? 'View Testimonials' : 'عرض الشهادات'}
               </Link>
@@ -117,7 +117,7 @@ const Index = () => {
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 {language === 'en'
                   ? 'AI analysis verifies content authenticity and extracts critical metadata.'
-                  : 'يتحقق تحليل الذكاء الاصطناعي من أصالة المحتوى ��يستخرج البيانات الوصفية الهامة.'}
+                  : 'يتحقق تحليل الذكاء الاصطناعي من أ��الة المحتوى ��يستخرج البيانات الوصفية الهامة.'}
               </p>
             </div>
             
