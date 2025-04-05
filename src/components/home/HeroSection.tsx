@@ -34,7 +34,7 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
               {language === 'en' ? 'Submit Your Testimony' : 'قدّم شهادتك'}
             </Link>
           </Button>
-          <Button size="lg" variant="secondary" className="text-white border border-white hover:bg-white/20" asChild>
+          <Button size="lg" variant="white" className="border border-white/30" asChild>
             <Link to="/testimonials">
               {language === 'en' ? 'View Testimonials' : 'عرض الشهادات'}
             </Link>
