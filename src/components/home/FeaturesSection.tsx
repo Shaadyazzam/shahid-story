@@ -38,7 +38,7 @@ export const FeaturesSection = ({ language }: FeaturesSectionProps) => {
             <p className="text-sm text-gray-600 dark:text-gray-300">
               {language === 'en'
                 ? 'AI analysis verifies content authenticity and extracts critical metadata.'
-                : 'يتحقق تحليل الذكاء الاصطناعي من أ��الة المحتوى ��يستخرج البيانات الوصفية الهامة.'}
+                : 'يتحقق تحليل الذكاء الاصطناعي من أصالة المحتوى ويستخرج البيانات الوصفية الهامة.'}
             </p>
           </div>
           
