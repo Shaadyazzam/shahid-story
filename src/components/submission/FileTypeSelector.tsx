@@ -15,13 +15,13 @@ export const FileTypeSelector = ({ language, submissionType }: FileTypeSelectorP
             submissionType === 'photo' ? 'Images' : 
             submissionType === 'video' ? 'Videos' : 
             submissionType === 'audio' ? 'Audio Files' :
-            'XML Files'
+            'Files'
           }`
         : `تحميل ${
             submissionType === 'photo' ? 'صور' : 
             submissionType === 'video' ? 'مقاطع فيديو' : 
             submissionType === 'audio' ? 'ملفات صوتية' :
-            'ملفات XML'
+            'ملفات'
           }`
       }
     </Label>

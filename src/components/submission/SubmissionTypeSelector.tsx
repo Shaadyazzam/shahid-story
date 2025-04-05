@@ -20,11 +20,10 @@ export const SubmissionTypeSelector = ({
       case 'photo': return <Image className="h-5 w-5" />;
       case 'video': return <Video className="h-5 w-5" />;
       case 'audio': return <Mic className="h-5 w-5" />;
-      case 'xml': return <FileText className="h-5 w-5" />;
     }
   };
 
-  const typesArray: SubmissionType[] = ['text', 'photo', 'video', 'audio', 'xml'];
+  const typesArray: SubmissionType[] = ['text', 'photo', 'video', 'audio'];
   
   return (
     <div className="flex flex-wrap gap-2">
@@ -43,8 +42,7 @@ export const SubmissionTypeSelector = ({
               : type === 'text' ? 'نص' 
               : type === 'photo' ? 'صورة'
               : type === 'video' ? 'فيديو'
-              : type === 'audio' ? 'صوت'
-              : 'XML'
+              : 'صوت'
             }
           </span>
         </Button>
