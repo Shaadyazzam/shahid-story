@@ -16,7 +16,6 @@ export const FileUploadZone = ({ language, submissionType, onFileChange }: FileU
       case 'photo': return "image/*";
       case 'video': return "video/*";
       case 'audio': return "audio/*";
-      case 'xml': return ".xml";
       default: return "";
     }
   };
@@ -30,20 +29,20 @@ export const FileUploadZone = ({ language, submissionType, onFileChange }: FileU
               submissionType === 'photo' ? 'images' : 
               submissionType === 'video' ? 'videos' : 
               submissionType === 'audio' ? 'audio files' :
-              'XML files'
+              'files'
             }, or click to select files`
           : `اسحب وأفلت ${
               submissionType === 'photo' ? 'صورك' : 
               submissionType === 'video' ? 'مقاطع الفيديو' : 
               submissionType === 'audio' ? 'ملفات الصوت' :
-              'ملفات XML'
+              'ملفات'
             } أو انقر لتحديد الملفات`
         }
       </p>
       <Input
         id="file-upload"
         type="file"
-        multiple={submissionType !== 'xml'}
+        multiple={true}
         accept={getAcceptedFileTypes()}
         className="hidden"
         onChange={onFileChange}
