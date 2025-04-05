@@ -79,8 +79,11 @@ export const FileUpload = ({
   };
   
   const removeFile = (index: number) => {
-    setFiles(prev => prev.filter((_, i) => i !== index));
-    if (submissionType === 'xml' && files.length <= 1) {
+    // Fix: Replace functional update with direct array update
+    const updatedFiles = files.filter((_, i) => i !== index);
+    setFiles(updatedFiles);
+    
+    if (submissionType === 'xml' && updatedFiles.length === 0) {
       setXmlData(null);
     }
   };
