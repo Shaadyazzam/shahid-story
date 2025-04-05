@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -118,7 +117,7 @@ const Index = () => {
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 {language === 'en'
                   ? 'AI analysis verifies content authenticity and extracts critical metadata.'
-                  : 'يتحقق تحليل الذكاء الاصطناعي من أصالة المحتوى ويستخرج البيانات الوصفية الهامة.'}
+                  : 'يتحقق تحليل الذكاء الاصطناعي من أصالة المحتوى ��يستخرج البيانات الوصفية الهامة.'}
               </p>
             </div>
             
@@ -200,9 +199,9 @@ const Index = () => {
               : 'تساعد كل شهادة في بناء سجل شامل للأحداث وتسهم في تحقيق العدالة.'}
           </p>
           <Button 
+            variant="white"
             size="lg" 
-            variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-palestine-green"
+            className="border-white"
             asChild
           >
             <Link to="/submit">

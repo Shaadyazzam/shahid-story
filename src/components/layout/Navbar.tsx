@@ -48,7 +48,7 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
           <Button 
             variant="outline" 
             size="sm" 
-            className="ml-4 flex items-center gap-2"
+            className="ml-4 flex items-center gap-2 text-gray-700 hover:text-palestine-green"
             onClick={toggleLanguage}
           >
             <Globe className="h-4 w-4" />
@@ -113,7 +113,7 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-gray-700 hover:text-palestine-green"
                 onClick={toggleLanguage}
               >
                 <Globe className="h-4 w-4" />

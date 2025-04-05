@@ -39,4 +39,4 @@ export const FormFooter = ({ language, isSubmitting }: FormFooterProps) => {
       </div>
     </>
   );
-};
+}
