@@ -18,12 +18,14 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
     <style>
-      /* Inline Palestine flag favicon */
+      /* Palestine flag favicon with correct proportions */
       .favicon-palestine {
         width: 32px;
         height: 24px;
         position: relative;
+        overflow: hidden;
       }
+      /* Black stripe (top) */
       .favicon-palestine::before {
         content: '';
         position: absolute;
@@ -33,6 +35,16 @@
         height: 33.33%;
         background-color: #000;
       }
+      /* White stripe (middle) */
+      .favicon-palestine-white {
+        position: absolute;
+        top: 33.33%;
+        left: 0;
+        width: 100%;
+        height: 33.33%;
+        background-color: #fff;
+      }
+      /* Green stripe (bottom) */
       .favicon-palestine::after {
         content: '';
         position: absolute;
@@ -42,6 +54,7 @@
         height: 33.33%;
         background-color: #007A3D;
       }
+      /* Red triangle */
       .favicon-triangle {
         position: absolute;
         top: 0;
@@ -50,7 +63,8 @@
         height: 0;
         border-top: 12px solid transparent;
         border-bottom: 12px solid transparent;
-        border-left: 12px solid #EA384C;
+        border-left: 24px solid #EA384C;
+        z-index: 1;
       }
     </style>
   </head>

@@ -53,8 +53,8 @@ const Index = () => {
       {/* Hero section with Palestine flag */}
       <section className="hero-gradient text-white py-20 md:py-28">
         <div className="container px-4 max-w-5xl mx-auto text-center">
-          {/* Palestinian Flag */}
-          <div className="palestine-flag mx-auto mb-8 max-w-md rounded overflow-hidden">
+          {/* Updated Palestinian Flag with correct proportions */}
+          <div className="relative palestine-flag mx-auto mb-8 max-w-md rounded overflow-hidden">
             <div className="palestine-flag-black"></div>
             <div className="palestine-flag-white"></div>
             <div className="palestine-flag-green"></div>

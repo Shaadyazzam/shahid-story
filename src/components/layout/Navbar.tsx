@@ -20,12 +20,12 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-shahid-dark shadow-sm z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          {/* Mini Palestine Flag Icon */}
-          <div className="hidden sm:block relative w-8 h-6 overflow-hidden mr-2">
-            <div className="absolute top-0 left-0 w-full h-1/3 bg-palestine-black"></div>
-            <div className="absolute top-1/3 left-0 w-full h-1/3 bg-palestine-white"></div>
-            <div className="absolute top-2/3 left-0 w-full h-1/3 bg-palestine-green"></div>
-            <div className="absolute top-0 left-0 w-0 h-0 border-top-transparent border-bottom-transparent border-left-palestine-red"></div>
+          {/* Updated Palestinian Flag Icon */}
+          <div className="hidden sm:block relative navbar-flag mr-2">
+            <div className="navbar-flag-black"></div>
+            <div className="navbar-flag-white"></div>
+            <div className="navbar-flag-green"></div>
+            <div className="navbar-triangle"></div>
           </div>
           <span className="text-2xl font-bold text-palestine-green">Shahid</span>
           <span className="text-xs text-palestine-red">شهيد</span>

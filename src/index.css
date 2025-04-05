@@ -112,32 +112,40 @@
     @apply bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center;
   }
 
+  /* Updated Palestinian flag with correct proportions and triangle */
   .palestine-flag {
     position: relative;
     width: 100%;
     height: 60px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .palestine-flag div {
-    flex: 1;
+    display: block;
+    overflow: hidden;
   }
 
   .palestine-flag-black {
     background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
   }
   
   .palestine-flag-white {
     background-color: #FFFFFF;
+    position: absolute;
+    top: 33.33%;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
   }
   
   .palestine-flag-green {
     background-color: #007A3D;
-  }
-
-  .palestine-flag-red {
-    background-color: #EA384C;
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
   }
 
   .palestine-triangle {
@@ -146,9 +154,57 @@
     left: 0;
     width: 0;
     height: 0;
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
     border-left: 60px solid #EA384C;
+    z-index: 1;
+  }
+
+  /* Palestine flag in navbar */
+  .navbar-flag {
+    position: relative;
+    width: 24px;
+    height: 16px;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .navbar-flag-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background-color: #000;
+  }
+
+  .navbar-flag-white {
+    position: absolute;
+    top: 33.33%;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background-color: #fff;
+  }
+
+  .navbar-flag-green {
+    position: absolute;
+    top: 66.66%;
+    left: 0;
+    width: 100%;
+    height: 33.33%;
+    background-color: #007A3D;
+  }
+
+  .navbar-triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 16px solid #EA384C;
+    z-index: 1;
   }
 }
-

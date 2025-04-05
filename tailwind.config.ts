@@ -53,23 +53,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors for Shahid
+				// Updated Palestine flag colors to match the image
 				shahid: {
 					dark: '#1A1F2C',
 					purple: '#8B5CF6',
-					red: '#ea384c',     // Palestinian flag red
-					green: '#007A3D',   // Palestinian flag green
-					white: '#ffffff',   // Palestinian flag white
-					black: '#000000',   // Palestinian flag black
+					red: '#EA384C',     // Palestinian flag red - kept same
+					green: '#007A3D',   // Palestinian flag green - kept same
+					white: '#ffffff',   // Palestinian flag white - kept same
+					black: '#000000',   // Palestinian flag black - kept same
 					blue: '#0EA5E9',
 					lightblue: '#33C3F0',
 					gray: '#8E9196',
 				},
 				palestine: {
-					red: '#ea384c',     // Palestinian flag red
-					green: '#007A3D',   // Palestinian flag green
-					white: '#ffffff',   // Palestinian flag white
-					black: '#000000',   // Palestinian flag black
+					red: '#EA384C',     // Palestinian flag red - kept same
+					green: '#007A3D',   // Palestinian flag green - kept same
+					white: '#ffffff',   // Palestinian flag white - kept same
+					black: '#000000',   // Palestinian flag black - kept same
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
