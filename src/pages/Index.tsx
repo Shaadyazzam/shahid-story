@@ -50,9 +50,17 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="hero-gradient text-white py-20 md:py-32">
+      {/* Hero section with Palestine flag */}
+      <section className="hero-gradient text-white py-20 md:py-28">
         <div className="container px-4 max-w-5xl mx-auto text-center">
+          {/* Palestinian Flag */}
+          <div className="palestine-flag mx-auto mb-8 max-w-md rounded overflow-hidden">
+            <div className="palestine-flag-black"></div>
+            <div className="palestine-flag-white"></div>
+            <div className="palestine-flag-green"></div>
+            <div className="palestine-triangle"></div>
+          </div>
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             {language === 'en' ? 'Document. Verify. Share.' : 'وثّق. تحقق. شارك.'}
           </h1>
@@ -64,7 +72,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-shahid-purple hover:bg-shahid-purple/90" asChild>
+            <Button size="lg" className="bg-palestine-green hover:bg-palestine-green/90" asChild>
               <Link to="/submit">
                 {language === 'en' ? 'Submit Your Testimony' : 'قدّم شهادتك'}
               </Link>
@@ -87,8 +95,8 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white dark:bg-shahid-dark p-6 rounded-lg shadow-sm text-center">
-              <div className="w-12 h-12 bg-shahid-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="h-6 w-6 text-shahid-purple" />
+              <div className="w-12 h-12 bg-palestine-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileText className="h-6 w-6 text-palestine-green" />
               </div>
               <h3 className="text-lg font-semibold mb-2">
                 {language === 'en' ? 'Document' : 'وثّق'}
@@ -101,8 +109,8 @@ const Index = () => {
             </div>
             
             <div className="bg-white dark:bg-shahid-dark p-6 rounded-lg shadow-sm text-center">
-              <div className="w-12 h-12 bg-shahid-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Eye className="h-6 w-6 text-shahid-purple" />
+              <div className="w-12 h-12 bg-palestine-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Eye className="h-6 w-6 text-palestine-green" />
               </div>
               <h3 className="text-lg font-semibold mb-2">
                 {language === 'en' ? 'Verify' : 'تحقق'}
@@ -115,8 +123,8 @@ const Index = () => {
             </div>
             
             <div className="bg-white dark:bg-shahid-dark p-6 rounded-lg shadow-sm text-center">
-              <div className="w-12 h-12 bg-shahid-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Archive className="h-6 w-6 text-shahid-purple" />
+              <div className="w-12 h-12 bg-palestine-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Archive className="h-6 w-6 text-palestine-green" />
               </div>
               <h3 className="text-lg font-semibold mb-2">
                 {language === 'en' ? 'Preserve' : 'حفظ'}
@@ -129,8 +137,8 @@ const Index = () => {
             </div>
             
             <div className="bg-white dark:bg-shahid-dark p-6 rounded-lg shadow-sm text-center">
-              <div className="w-12 h-12 bg-shahid-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-6 w-6 text-shahid-purple" />
+              <div className="w-12 h-12 bg-palestine-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-6 w-6 text-palestine-green" />
               </div>
               <h3 className="text-lg font-semibold mb-2">
                 {language === 'en' ? 'Protect' : 'حماية'}
@@ -179,7 +187,7 @@ const Index = () => {
       </section>
       
       {/* CTA section */}
-      <section className="bg-shahid-purple py-16 text-white">
+      <section className="bg-palestine-green py-16 text-white">
         <div className="container px-4 max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             {language === 'en' 
@@ -194,7 +202,7 @@ const Index = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-shahid-purple"
+            className="border-white text-white hover:bg-white hover:text-palestine-green"
             asChild
           >
             <Link to="/submit">

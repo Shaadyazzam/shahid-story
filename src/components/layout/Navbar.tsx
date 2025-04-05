@@ -20,22 +20,29 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-shahid-dark shadow-sm z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-shahid-purple">Shahid</span>
-          <span className="text-xs text-shahid-gray">شهيد</span>
+          {/* Mini Palestine Flag Icon */}
+          <div className="hidden sm:block relative w-8 h-6 overflow-hidden mr-2">
+            <div className="absolute top-0 left-0 w-full h-1/3 bg-palestine-black"></div>
+            <div className="absolute top-1/3 left-0 w-full h-1/3 bg-palestine-white"></div>
+            <div className="absolute top-2/3 left-0 w-full h-1/3 bg-palestine-green"></div>
+            <div className="absolute top-0 left-0 w-0 h-0 border-top-transparent border-bottom-transparent border-left-palestine-red"></div>
+          </div>
+          <span className="text-2xl font-bold text-palestine-green">Shahid</span>
+          <span className="text-xs text-palestine-red">شهيد</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple">
+          <Link to="/" className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green">
             {language === 'en' ? 'Home' : 'الرئيسية'}
           </Link>
-          <Link to="/submit" className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple">
+          <Link to="/submit" className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green">
             {language === 'en' ? 'Submit Testimony' : 'تقديم شهادة'}
           </Link>
-          <Link to="/testimonials" className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple">
+          <Link to="/testimonials" className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green">
             {language === 'en' ? 'Testimonials' : 'الشهادات'}
           </Link>
-          <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple">
+          <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green">
             {language === 'en' ? 'About' : 'حول'}
           </Link>
           <Button 
@@ -50,6 +57,7 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
           <Button 
             variant="default" 
             size="sm"
+            className="bg-palestine-green hover:bg-palestine-green/90"
             asChild
           >
             <Link to="/submit">
@@ -75,28 +83,28 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
             <Link 
               to="/"
-              className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple py-2"
+              className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {language === 'en' ? 'Home' : 'الرئيسية'}
             </Link>
             <Link 
               to="/submit"
-              className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple py-2"
+              className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {language === 'en' ? 'Submit Testimony' : 'تقديم شهادة'}
             </Link>
             <Link 
               to="/testimonials"
-              className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple py-2"
+              className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {language === 'en' ? 'Testimonials' : 'الشهادات'}
             </Link>
             <Link 
               to="/about"
-              className="text-sm font-medium text-gray-700 hover:text-shahid-purple dark:text-gray-200 dark:hover:text-shahid-purple py-2"
+              className="text-sm font-medium text-gray-700 hover:text-palestine-green dark:text-gray-200 dark:hover:text-palestine-green py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {language === 'en' ? 'About' : 'حول'}
@@ -114,6 +122,7 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
               <Button 
                 variant="default" 
                 size="sm"
+                className="bg-palestine-green hover:bg-palestine-green/90"
                 asChild
               >
                 <Link to="/submit" onClick={() => setIsMenuOpen(false)}>

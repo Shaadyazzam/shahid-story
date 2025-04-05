@@ -57,10 +57,19 @@ export default {
 				shahid: {
 					dark: '#1A1F2C',
 					purple: '#8B5CF6',
-					red: '#ea384c',
+					red: '#ea384c',     // Palestinian flag red
+					green: '#007A3D',   // Palestinian flag green
+					white: '#ffffff',   // Palestinian flag white
+					black: '#000000',   // Palestinian flag black
 					blue: '#0EA5E9',
 					lightblue: '#33C3F0',
 					gray: '#8E9196',
+				},
+				palestine: {
+					red: '#ea384c',     // Palestinian flag red
+					green: '#007A3D',   // Palestinian flag green
+					white: '#ffffff',   // Palestinian flag white
+					black: '#000000',   // Palestinian flag black
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

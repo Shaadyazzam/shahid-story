@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Shield, Heart } from "lucide-react";
 
@@ -14,7 +15,7 @@ export const Footer = ({ language }: FooterProps) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <span className="text-xl font-bold text-shahid-purple">Shahid</span>
+              <span className="text-xl font-bold text-palestine-green">Shahid</span>
               <span className="text-xs">شهيد</span>
             </div>
             <p className="text-sm text-gray-300 mb-4">
@@ -23,7 +24,7 @@ export const Footer = ({ language }: FooterProps) => {
                 : 'توثيق جرائم الحرب وانتهاكات حقوق الإنسان من خلال الشهادات وجمع الأدلة المدعومة بالذكاء الاصطناعي.'}
             </p>
             <div className="flex items-center space-x-2">
-              <Shield className="h-4 w-4 text-shahid-purple" />
+              <Shield className="h-4 w-4 text-palestine-green" />
               <span className="text-xs text-gray-300">
                 {language === 'en' 
                   ? 'Secure, Private, Anonymous'
@@ -38,22 +39,22 @@ export const Footer = ({ language }: FooterProps) => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <Link to="/" className="hover:text-shahid-purple transition-colors">
+                <Link to="/" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Home' : 'الرئيسية'}
                 </Link>
               </li>
               <li>
-                <Link to="/submit" className="hover:text-shahid-purple transition-colors">
+                <Link to="/submit" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Submit Testimony' : 'تقديم شهادة'}
                 </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="hover:text-shahid-purple transition-colors">
+                <Link to="/testimonials" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Testimonials' : 'الشهادات'}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-shahid-purple transition-colors">
+                <Link to="/about" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'About' : 'حول'}
                 </Link>
               </li>
@@ -66,17 +67,17 @@ export const Footer = ({ language }: FooterProps) => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <Link to="/privacy" className="hover:text-shahid-purple transition-colors">
+                <Link to="/privacy" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-shahid-purple transition-colors">
+                <Link to="/terms" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Terms of Service' : 'شروط الخدمة'}
                 </Link>
               </li>
               <li>
-                <Link to="/security" className="hover:text-shahid-purple transition-colors">
+                <Link to="/security" className="hover:text-palestine-green transition-colors">
                   {language === 'en' ? 'Security Measures' : 'إجراءات الأمان'}
                 </Link>
               </li>
@@ -96,7 +97,7 @@ export const Footer = ({ language }: FooterProps) => {
                 ? 'Created with'
                 : 'تم الإنشاء بواسطة'}
             </span>
-            <Heart className="h-3 w-3 text-shahid-purple mx-1" />
+            <Heart className="h-3 w-3 text-palestine-red mx-1" />
             <span className="text-xs text-gray-400">
               {language === 'en' 
                 ? 'for humanity'
