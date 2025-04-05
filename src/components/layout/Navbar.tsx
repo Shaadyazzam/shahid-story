@@ -21,7 +21,7 @@ export const Navbar = ({ language, setLanguage }: NavbarProps) => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-2xl font-bold text-shahid-purple">Shahid</span>
-          <span className="text-xs text-shahid-gray">شاهد</span>
+          <span className="text-xs text-shahid-gray">شهيد</span>
         </Link>
 
         {/* Desktop Navigation */}

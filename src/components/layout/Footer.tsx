@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Shield, Heart } from "lucide-react";
 
@@ -16,7 +15,7 @@ export const Footer = ({ language }: FooterProps) => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <span className="text-xl font-bold text-shahid-purple">Shahid</span>
-              <span className="text-xs">شاهد</span>
+              <span className="text-xs">شهيد</span>
             </div>
             <p className="text-sm text-gray-300 mb-4">
               {language === 'en' 
@@ -89,7 +88,7 @@ export const Footer = ({ language }: FooterProps) => {
           <p className="text-xs text-gray-400">
             {language === 'en' 
               ? `© ${currentYear} Shahid. All rights reserved.`
-              : `© ${currentYear} شاهد. جميع الحقوق محفوظة.`}
+              : `© ${currentYear} شهيد. جميع الحقوق محفوظة.`}
           </p>
           <div className="flex items-center space-x-1 mt-4 md:mt-0">
             <span className="text-xs text-gray-400">
