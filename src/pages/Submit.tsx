@@ -1,15 +1,50 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { SubmissionForm } from '@/components/submission/SubmissionForm';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AIAnalysisCard } from '@/components/analysis/AIAnalysisCard';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { InfoIcon } from 'lucide-react';
+import { InfoIcon, Database } from 'lucide-react';
+import { LOCAL_STORAGE_KEY, StoredTestimony } from '@/components/submission/types';
 
 const Submit = () => {
   const [language, setLanguage] = useState<'en' | 'ar'>('en');
   const [showAnalysis, setShowAnalysis] = useState<boolean>(false);
+  const [storedCount, setStoredCount] = useState<number>(0);
+  
+  useEffect(() => {
+    // Get the count of stored testimonies
+    try {
+      const data = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (data) {
+        const testimonies: StoredTestimony[] = JSON.parse(data);
+        setStoredCount(testimonies.length);
+      }
+      
+      // Update count whenever localStorage changes
+      const handleStorageChange = () => {
+        const updatedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (updatedData) {
+          const testimonies: StoredTestimony[] = JSON.parse(updatedData);
+          setStoredCount(testimonies.length);
+        } else {
+          setStoredCount(0);
+        }
+      };
+      
+      window.addEventListener('storage', handleStorageChange);
+      // Special event for same-tab updates
+      document.addEventListener('localStorageUpdated', handleStorageChange);
+      
+      return () => {
+        window.removeEventListener('storage', handleStorageChange);
+        document.removeEventListener('localStorageUpdated', handleStorageChange);
+      };
+    } catch (error) {
+      console.error('Error reading from localStorage:', error);
+    }
+  }, []);
   
   // Mock analysis data
   const mockAnalysisData = {
@@ -75,6 +110,12 @@ const Submit = () => {
                 <TabsTrigger value="analysis" disabled={!showAnalysis}>
                   {language === 'en' ? 'AI Analysis' : 'تحليل الذكاء الاصطناعي'}
                 </TabsTrigger>
+                {storedCount > 0 && (
+                  <TabsTrigger value="stored">
+                    <Database className="h-4 w-4 mr-1" />
+                    {language === 'en' ? `Stored (${storedCount})` : `مخزن (${storedCount})`}
+                  </TabsTrigger>
+                )}
               </TabsList>
               <TabsContent value="submission">
                 <Alert className="mb-6">
@@ -84,8 +125,8 @@ const Submit = () => {
                   </AlertTitle>
                   <AlertDescription>
                     {language === 'en' 
-                      ? 'For this demo, submitted content will not be stored. In the full version, all data is encrypted and securely preserved.'
-                      : 'في هذا العرض التوضيحي، لن يتم تخزين المحتوى المقدم. في النسخة الكاملة، يتم تشفير جميع البيانات والحفاظ عليها بشكل آمن.'}
+                      ? 'For this demo, submitted content will be stored in your browser\'s local storage. There\'s a 5MB limit to ensure performance.'
+                      : 'في هذا العرض التوضيحي، سيتم تخزين المحتوى المرسل في التخزين المحلي للمتصفح الخاص بك. هناك حد 5 ميغابايت لضمان الأداء.'}
                   </AlertDescription>
                 </Alert>
                 
@@ -110,6 +151,15 @@ const Submit = () => {
                   metadata={mockAnalysisData.metadata}
                   language={language}
                 />
+              </TabsContent>
+              
+              <TabsContent value="stored">
+                <div className="bg-white dark:bg-shahid-dark p-4 rounded-lg border border-gray-100 dark:border-gray-800">
+                  <h2 className="text-xl font-semibold mb-4">
+                    {language === 'en' ? 'Stored Testimonies' : 'الشهادات المخزنة'}
+                  </h2>
+                  <StoredTestimoniesDisplay language={language} />
+                </div>
               </TabsContent>
             </Tabs>
           </div>
@@ -195,6 +245,73 @@ const Submit = () => {
         </div>
       </div>
     </Layout>
+  );
+};
+
+// Component to display stored testimonies
+const StoredTestimoniesDisplay = ({ language }: { language: 'en' | 'ar' }) => {
+  const [testimonies, setTestimonies] = useState<StoredTestimony[]>([]);
+  
+  useEffect(() => {
+    try {
+      const data = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (data) {
+        const stored: StoredTestimony[] = JSON.parse(data);
+        setTestimonies(stored);
+      }
+    } catch (error) {
+      console.error('Error reading stored testimonies:', error);
+    }
+  }, []);
+  
+  if (testimonies.length === 0) {
+    return (
+      <div className="text-center py-8 text-gray-500">
+        {language === 'en' ? 'No stored testimonies found.' : 'لم يتم العثور على شهادات مخزنة.'}
+      </div>
+    );
+  }
+  
+  return (
+    <div className="space-y-4">
+      {testimonies.map(testimony => (
+        <div key={testimony.id} className="border border-gray-100 dark:border-gray-700 p-4 rounded-lg">
+          <div className="flex justify-between items-start mb-2">
+            <div>
+              <span className="inline-block px-2 py-1 text-xs rounded-full bg-shahid-purple/10 text-shahid-purple">
+                {testimony.type.toUpperCase()}
+              </span>
+            </div>
+            <span className="text-xs text-gray-500">
+              {new Date(testimony.submittedAt).toLocaleString()}
+            </span>
+          </div>
+          
+          <h3 className="font-medium mb-1">
+            {testimony.location || (language === 'en' ? 'Unknown location' : 'موقع غير معروف')}
+          </h3>
+          
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+            {testimony.description || (language === 'en' ? 'No description provided' : 'لم يتم تقديم وصف')}
+          </p>
+          
+          {testimony.files.length > 0 && (
+            <div className="mt-2">
+              <p className="text-xs font-medium text-gray-500 mb-1">
+                {language === 'en' ? 'Attached files:' : 'الملفات المرفقة:'}
+              </p>
+              <div className="flex flex-wrap gap-1">
+                {testimony.files.map((file, index) => (
+                  <span key={index} className="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+                    {file}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 };
 
