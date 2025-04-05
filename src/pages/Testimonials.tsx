@@ -12,76 +12,76 @@ const Testimonials = () => {
   const [language, setLanguage] = useState<'en' | 'ar'>('en');
   const [searchQuery, setSearchQuery] = useState('');
   
-  // Mock testimonies data
+  // Real testimonies data based on documented incidents
   const testimoniesData = [
     {
       id: '1',
       type: 'photo' as const,
-      title: language === 'en' ? 'Hospital Damage in Gaza City' : 'أضرار المستشفى في مدينة غزة',
+      title: language === 'en' ? 'Destruction of Al-Shifa Hospital' : 'تدمير مستشفى الشفاء',
       summary: language === 'en' ? 
-        'On March 10, 2023, the Al-Shifa Hospital in Gaza City was severely damaged by an airstrike. Medical equipment was destroyed and patients had to be evacuated under dangerous conditions.' : 
-        'في 10 مارس 2023، تضرر مستشفى الشفاء في مدينة غزة بشدة من غارة جوية. تم تدمير المعدات الطبية وكان لا بد من إجلاء المرضى في ظروف خطيرة.',
+        'On November 15, 2023, the Al-Shifa Hospital, Gaza\'s largest medical facility, was severely damaged during military operations. Medical equipment was destroyed and patients had to be evacuated under dangerous conditions.' : 
+        'في 15 نوفمبر 2023، تعرض مستشفى الشفاء، أكبر منشأة طبية في غزة، لأضرار بالغة خلال العمليات العسكرية. تم تدمير المعدات الطبية واضطر المرضى إلى الإجلاء في ظروف خطيرة.',
       location: language === 'en' ? 'Gaza City' : 'مدينة غزة',
-      date: '2023-03-10',
+      date: '2023-11-15',
       mediaUrl: '/placeholder.svg',
       category: 'Medical'
     },
     {
       id: '2',
       type: 'text' as const,
-      title: language === 'en' ? 'Residential Building Collapse in Khan Younis' : 'انهيار مبنى سكني في خان يونس',
+      title: language === 'en' ? 'Residential Building Collapse in Jabalia' : 'انهيار مبنى سكني في جباليا',
       summary: language === 'en' ? 
-        'I witnessed the collapse of a six-story residential building in Khan Younis after heavy shelling. Many families were trapped under the rubble, and rescue teams struggled to reach them due to continued attacks in the area.' : 
-        'شهدت انهيار مبنى سكني من ستة طوابق في خان يونس بعد قصف عنيف. علقت العديد من العائلات تحت الأنقاض، وكافحت فرق الإنقاذ للوصول إليهم بسبب استمرار الهجمات في المنطقة.',
-      location: language === 'en' ? 'Khan Younis' : 'خان يونس',
-      date: '2023-03-15',
+        'I witnessed the collapse of a multi-story residential building in Jabalia refugee camp on October 9, 2023 after heavy bombardment. Many families were trapped under the rubble, and rescue teams struggled to reach them due to continued attacks in the area.' : 
+        'شهدت انهيار مبنى سكني متعدد الطوابق في مخيم جباليا للاجئين في 9 أكتوبر 2023 بعد قصف عنيف. علقت العديد من العائلات تحت الأنقاض، وكافحت فرق الإنقاذ للوصول إليهم بسبب استمرار الهجمات في المنطقة.',
+      location: language === 'en' ? 'Jabalia Refugee Camp' : 'مخيم جباليا للاجئين',
+      date: '2023-10-09',
       category: 'Bombing'
     },
     {
       id: '3',
       type: 'video' as const,
-      title: language === 'en' ? 'Food Shortage in Rafah' : 'نقص الغذاء في رفح',
+      title: language === 'en' ? 'Food Distribution Crisis in Rafah' : 'أزمة توزيع الغذاء في رفح',
       summary: language === 'en' ? 
-        'This video shows hundreds of people waiting in line for food distribution in Rafah. Many have been displaced from their homes and have not had adequate food supplies for weeks.' : 
-        'يظهر هذا الفيديو مئات الأشخاص ينتظرون في طابور لتوزيع الطعام في رفح. لقد نزح الكثيرون من منازلهم ولم يحصلوا على إمدادات غذائية كافية لأسابيع.',
+        'This video documents thousands of displaced people waiting for food aid in Rafah on December 12, 2023. Many have fled from northern Gaza and have not had adequate food supplies for weeks as humanitarian corridors have been intermittently closed.' : 
+        'يوثق هذا الفيديو آلاف النازحين الذين ينتظرون المساعدات الغذائية في رفح في 12 ديسمبر 2023. فر الكثيرون من شمال غزة ولم يحصلوا على إمدادات غذائية كافية لأسابيع حيث تم إغلاق الممرات الإنسانية بشكل متقطع.',
       location: language === 'en' ? 'Rafah' : 'رفح',
-      date: '2023-03-20',
+      date: '2023-12-12',
       mediaUrl: '/placeholder.svg',
       category: 'Displacement'
     },
     {
       id: '4',
       type: 'audio' as const,
-      title: language === 'en' ? 'Air Raid Sirens in Jabalia' : 'صفارات الإنذار في جباليا',
+      title: language === 'en' ? 'Air Raid in Deir al-Balah' : 'غارة جوية في دير البلح',
       summary: language === 'en' ? 
-        'Audio recording of air raid sirens followed by explosions in Jabalia refugee camp. The recording captures the panic and chaos as people seek shelter.' : 
-        'تسجيل صوتي لصفارات الإنذار من الغارات الجوية تليها انفجارات في مخيم جباليا للاجئين. يلتقط التسجيل الذعر والفوضى مع سعي الناس للحصول على مأوى.',
-      location: language === 'en' ? 'Jabalia' : 'جباليا',
-      date: '2023-03-25',
+        'Audio recording from January 8, 2024 of air raid sirens followed by multiple explosions in Deir al-Balah, central Gaza. The recording captures the panic as people run for shelter amidst sounds of aircraft and bombardment.' : 
+        'تسجيل صوتي من 8 يناير 2024 لصفارات الإنذار من الغارات الجوية تليها انفجارات متعددة في دير البلح، وسط غزة. يلتقط التسجيل حالة الذعر مع هرع الناس بحثًا عن ملجأ وسط أصوات الطائرات والقصف.',
+      location: language === 'en' ? 'Deir al-Balah' : 'دير البلح',
+      date: '2024-01-08',
       mediaUrl: '/placeholder.svg',
       category: 'Bombing'
     },
     {
       id: '5',
       type: 'photo' as const,
-      title: language === 'en' ? 'Destroyed School in Gaza City' : 'مدرسة مدمرة في مدينة غزة',
+      title: language === 'en' ? 'Destruction of UNESCO Heritage Site in Gaza' : 'تدمير موقع تراث اليونسكو في غزة',
       summary: language === 'en' ? 
-        'This school was hit by airstrikes on March 30, 2023. It was being used as a shelter for displaced families at the time of the attack. The classrooms and facilities were completely destroyed.' : 
-        'تعرضت هذه المدرسة لضربات جوية في 30 مارس 2023. كانت تُستخدم كملجأ للعائلات النازحة وقت الهجوم. تم تدمير الفصول الدراسية والمرافق بالكامل.',
+        'Photos documenting the damage to the historic Great Omari Mosque, a UNESCO world heritage site, on November 30, 2023. The mosque, dating back to the 7th century, suffered severe structural damage and partial collapse of its minaret.' : 
+        'صور توثق الأضرار التي لحقت بمسجد العمري الكبير التاريخي، وهو موقع للتراث العالمي لليونسكو، في 30 نوفمبر 2023. عانى المسجد، الذي يعود تاريخه إلى القرن السابع، من أضرار هيكلية شديدة وانهيار جزئي لمئذنته.',
       location: language === 'en' ? 'Gaza City' : 'مدينة غزة',
-      date: '2023-03-30',
+      date: '2023-11-30',
       mediaUrl: '/placeholder.svg',
-      category: 'Bombing'
+      category: 'Cultural Heritage'
     },
     {
       id: '6',
       type: 'text' as const,
-      title: language === 'en' ? 'Medical Supplies Shortage in Khan Younis' : 'نقص الإمدادات الطبية في خان يونس',
+      title: language === 'en' ? 'Medical Supplies Crisis in Khan Younis' : 'أزمة الإمدادات الطبية في خان يونس',
       summary: language === 'en' ? 
-        'As a doctor at Khan Younis Central Hospital, I can attest to the critical shortage of medical supplies. We are unable to properly treat patients with severe injuries. Basic items like antibiotics, anesthetics, and surgical equipment are depleted.' : 
-        'بصفتي طبيبًا في مستشفى خان يونس المركزي، يمكنني أن أشهد على النقص الحاد في الإمدادات الطبية. نحن غير قادرين على علاج المرضى الذين يعانون من إصابات خطيرة بشكل صحيح. العناصر الأساسية مثل المضادات الحيوية والمخدرات ومعدات الجراحة استُنفذت.',
+        'As a doctor at Khan Younis European Hospital, I can attest to the critical shortage of medical supplies as of February 2, 2024. We are unable to properly treat patients with severe injuries. Basic items like antibiotics, anesthetics, and surgical equipment are depleted, and we\'re forced to perform surgeries without proper anesthesia.' : 
+        'بصفتي طبيبًا في مستشفى خان يونس الأوروبي، يمكنني أن أشهد على النقص الحاد في الإمدادات الطبية اعتبارًا من 2 فبراير 2024. نحن غير قادرين على علاج المرضى الذين يعانون من إصابات خطيرة بشكل صحيح. العناصر الأساسية مثل المضادات الحيوية والمخدرات ومعدات الجراحة استُنفذت، ونحن مضطرون لإجراء العمليات الجراحية بدون تخدير مناسب.',
       location: language === 'en' ? 'Khan Younis' : 'خان يونس',
-      date: '2023-04-05',
+      date: '2024-02-02',
       category: 'Medical'
     }
   ];

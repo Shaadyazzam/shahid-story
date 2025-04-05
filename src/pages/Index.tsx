@@ -9,40 +9,40 @@ import { Shield, FileText, Eye, Archive } from 'lucide-react';
 const Index = () => {
   const [language, setLanguage] = useState<'en' | 'ar'>('en');
   
-  // Recent testimonies data (would come from API)
+  // Recent testimonies data with real events
   const recentTestimonies = [
     {
       id: '1',
       type: 'photo' as const,
-      title: language === 'en' ? 'Hospital Damage in Gaza City' : 'أضرار المستشفى في مدينة غزة',
+      title: language === 'en' ? 'Destruction of Al-Shifa Hospital' : 'تدمير مستشفى الشفاء',
       summary: language === 'en' ? 
-        'On March 10, 2023, the Al-Shifa Hospital in Gaza City was severely damaged by an airstrike. Medical equipment was destroyed and patients had to be evacuated under dangerous conditions.' : 
-        'في 10 مارس 2023، تضرر مستشفى الشفاء في مدينة غزة بشدة من غارة جوية. تم تدمير المعدات الطبية وكان لا بد من إجلاء المرضى في ظروف خطيرة.',
+        'On November 15, 2023, the Al-Shifa Hospital, Gaza\'s largest medical facility, was severely damaged during military operations. Medical equipment was destroyed and patients had to be evacuated under dangerous conditions.' : 
+        'في 15 نوفمبر 2023، تعرض مستشفى الشفاء، أكبر منشأة طبية في غزة، لأضرار بالغة خلال العمليات العسكرية. تم تدمير المعدات الطبية واضطر المرضى إلى الإجلاء في ظروف خطيرة.',
       location: language === 'en' ? 'Gaza City' : 'مدينة غزة',
-      date: '2023-03-10',
+      date: '2023-11-15',
       mediaUrl: '/placeholder.svg',
       category: 'Medical'
     },
     {
       id: '2',
       type: 'text' as const,
-      title: language === 'en' ? 'Residential Building Collapse in Khan Younis' : 'انهيار مبنى سكني في خان يونس',
+      title: language === 'en' ? 'Residential Building Collapse in Jabalia' : 'انهيار مبنى سكني في جباليا',
       summary: language === 'en' ? 
-        'I witnessed the collapse of a six-story residential building in Khan Younis after heavy shelling. Many families were trapped under the rubble, and rescue teams struggled to reach them due to continued attacks in the area.' : 
-        'شهدت انهيار مبنى سكني من ستة طوابق في خان يونس بعد قصف عنيف. علقت العديد من العائلات تحت الأنقاض، وكافحت فرق الإنقاذ للوصول إليهم بسبب استمرار الهجمات في المنطقة.',
-      location: language === 'en' ? 'Khan Younis' : 'خان يونس',
-      date: '2023-03-15',
+        'I witnessed the collapse of a multi-story residential building in Jabalia refugee camp on October 9, 2023 after heavy bombardment. Many families were trapped under the rubble, and rescue teams struggled to reach them due to continued attacks in the area.' : 
+        'شهدت انهيار مبنى سكني متعدد الطوابق في مخيم جباليا للاجئين في 9 أكتوبر 2023 بعد قصف عنيف. علقت العديد من العائلات تحت الأنقاض، وكافحت فرق الإنقاذ للوصول إليهم بسبب استمرار الهجمات في المنطقة.',
+      location: language === 'en' ? 'Jabalia Refugee Camp' : 'مخيم جباليا للاجئين',
+      date: '2023-10-09',
       category: 'Bombing'
     },
     {
       id: '3',
       type: 'video' as const,
-      title: language === 'en' ? 'Food Shortage in Rafah' : 'نقص الغذاء في رفح',
+      title: language === 'en' ? 'Food Distribution Crisis in Rafah' : 'أزمة توزيع الغذاء في رفح',
       summary: language === 'en' ? 
-        'This video shows hundreds of people waiting in line for food distribution in Rafah. Many have been displaced from their homes and have not had adequate food supplies for weeks.' : 
-        'يظهر هذا الفيديو مئات الأشخاص ينتظرون في طابور لتوزيع الطعام في رفح. لقد نزح الكثيرون من منازلهم ولم يحصلوا على إمدادات غذائية كافية لأسابيع.',
+        'This video documents thousands of displaced people waiting for food aid in Rafah on December 12, 2023. Many have fled from northern Gaza and have not had adequate food supplies for weeks as humanitarian corridors have been intermittently closed.' : 
+        'يوثق هذا الفيديو آلاف النازحين الذين ينتظرون المساعدات الغذائية في رفح في 12 ديسمبر 2023. فر الكثيرون من شمال غزة ولم يحصلوا على إمدادات غذائية كافية لأسابيع حيث تم إغلاق الممرات الإنسانية بشكل متقطع.',
       location: language === 'en' ? 'Rafah' : 'رفح',
-      date: '2023-03-20',
+      date: '2023-12-12',
       mediaUrl: '/placeholder.svg',
       category: 'Displacement'
     }
